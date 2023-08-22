@@ -11,10 +11,10 @@ Esta API é parte integrante de uma série de desafios envolvendo o Rest Framewo
 - **Consulta**: Registro que estabelece relação entre o paciente e um médico, abarcando nomes, horários, diagnósticos e outros.
 
 ### Serializers:
-Há serializers definidos para os modelos `Paciente`, `Médico`, `Consulta` e `Prontuário`, especificando os campos que serão expostos nas APIs.
+Há serializers definidos para os modelos `Paciente`, `Médico` e `Consulta`, especificando os campos que serão expostos nas APIs.
 
 ### Endpoints:
-A API disponibiliza endpoints para todas as entidades (Paciente, Médico, Consulta e Prontuário) permitindo as operações CRUD. Adicionalmente, há um endpoint para listar todas as consultas de um paciente em específico.
+A API disponibiliza endpoints para todas as entidades (Paciente, Médico, Consulta ) permitindo as operações CRUD. Adicionalmente, há um endpoint para listar todas as consultas de um paciente em específico.
 
 ### Autenticação:
 Autenticação é realizada através do Rest Framework utilizando usuário e senha.
