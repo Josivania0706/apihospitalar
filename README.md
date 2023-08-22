@@ -14,7 +14,7 @@ Esta API é parte integrante de uma série de desafios envolvendo o Rest Framewo
 Há serializers definidos para os modelos `Paciente`, `Médico` e `Consulta`, especificando os campos que serão expostos nas APIs.
 
 ### Endpoints:
-A API disponibiliza endpoints para todas as entidades (Paciente, Médico, Consulta e Prontuário) permitindo as operações CRUD. Adicionalmente, há um endpoint para listar todas as consultas de um paciente em específico.
+A API disponibiliza endpoints para todas as entidades (Paciente, Médico, Consulta ) permitindo as operações CRUD. Adicionalmente, há um endpoint para listar todas as consultas de um paciente em específico.
 
 ### Autenticação:
 Autenticação é realizada através do Rest Framework utilizando usuário e senha.
