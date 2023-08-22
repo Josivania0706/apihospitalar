@@ -21,7 +21,7 @@ Autenticação é realizada através do Rest Framework utilizando usuário e sen
 
 ### Permissões:
 Os níveis de permissão estão distribuídos da seguinte forma:
-- **Médicos**: Possuem permissão total, podendo LISTAR, CRIAR, DELETAR e ATUALIZAR.
+- **Médicos**: Possuem permissão total, podendo Listar, Criar, Atualizar, Deletar dados.
 - **Atendentes**: Têm permissões para Listar, Criar e Atualizar dados.
 - **Leitores**: Seu acesso se restringe a Listar os dados, voltado principalmente para o consumo em ferramentas de BI.
 
