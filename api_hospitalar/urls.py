@@ -1,6 +1,9 @@
-from django.contrib import admin
-from django.urls import path, include
+from rest_framework.routers import SimpleRouter
+from api_hospitalar.views import *
 
-urlpatterns = [
-   
-]
+# gerador de rotas do Rest
+router = SimpleRouter()
+router.register('medicos', Medicos_API)
+router.register('pacientes', Pacientes_API)
+router.register('consultas', Consultas_API)
+

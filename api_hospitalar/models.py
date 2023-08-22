@@ -1,8 +1,5 @@
 from django.db import models
 
-# Create your models here.
-from django.db import models
-
 # Classe abstrata
 class Pessoa(models.Model):
     nome = models.CharField(max_length=100)
@@ -16,6 +13,8 @@ class Paciente(Pessoa):
     def __str__(self):
         return self.nome
 
+    class Meta:
+        ordering = ['nome']
 
 class Medico(Pessoa):
     especializacao = models.CharField(max_length=200)
@@ -24,6 +23,8 @@ class Medico(Pessoa):
     def __str__(self):
         return self.nome
 
+    class Meta:
+        ordering = ['nome']
 
 class Consulta(models.Model):
     paciente = models.ForeignKey(Paciente, on_delete=models.DO_NOTHING)
@@ -35,3 +36,5 @@ class Consulta(models.Model):
     def __str__(self):
         return f'{self.id} - {self.paciente} - {self.medico}'
 
+    class Meta:
+        ordering = ['paciente']
