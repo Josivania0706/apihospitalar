@@ -16,5 +16,5 @@ class Paciente_Serializer(serializers.ModelSerializer):
 class Consulta_Serializer(serializers.ModelSerializer):
     class Meta:
         model = Consulta
-        fields = ['id', 'paciente', 'medico', 'data_consulta']
+        fields = ['id', 'paciente', 'medico', 'diagnostico', 'prescricao', 'data_consulta']
 

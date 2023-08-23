@@ -25,3 +25,10 @@ Os níveis de permissão estão distribuídos da seguinte forma:
 - **Atendentes**: Têm permissões para Listar, Criar e Atualizar dados.
 - **Leitores**: Seu acesso se restringe a Listar os dados, voltado principalmente para o consumo em ferramentas de BI.
 
+### Links de acesso para testes:
+- http://127.0.0.1:8000/api/v1/consultas/ 
+- http://127.0.0.1:8000/api/v1/consultas/1/ 
+- http://127.0.0.1:8000/api/v1/medicos/
+- http://127.0.0.1:8000/api/v1/medicos/21/
+- http://127.0.0.1:8000/api/v1/pacientes/
+- http://127.0.0.1:8000/api/v1/pacientes/1/consultas/

@@ -12,8 +12,3 @@ class User_Permissions(BasePermission):
             return request.method in ['GET']
         
         return False
-        
-        
-
-
-
