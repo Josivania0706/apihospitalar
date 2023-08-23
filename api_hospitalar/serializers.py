@@ -6,12 +6,12 @@ from rest_framework import serializers
 class Medico_Serializer(serializers.ModelSerializer):
     class Meta:
         model = Medico
-        fields = ['id', 'nome', 'especializacao', 'crm']
+        fields = ['id', 'nome', 'idade', 'sexo', 'cidade', 'especializacao', 'crm']
 
 class Paciente_Serializer(serializers.ModelSerializer):
     class Meta:
         model = Paciente
-        fields = ['id', 'nome', 'idade', 'cidade']
+        fields = ['id', 'nome', 'idade', 'sexo', 'cidade']
 
 class Consulta_Serializer(serializers.ModelSerializer):
     class Meta:
