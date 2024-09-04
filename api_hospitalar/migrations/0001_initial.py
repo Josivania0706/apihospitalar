@@ -3,6 +3,7 @@
 from django.db import migrations, models
 import django.db.models.deletion
 
+PESSOA_MODEL = 'api_hospitalar.pessoa'
 
 class Migration(migrations.Migration):
 
@@ -25,19 +26,19 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Medico',
             fields=[
-                ('pessoa_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='api_hospitalar.pessoa')),
+                ('pessoa_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to=PESSOA_MODEL)),
                 ('especializacao', models.CharField(max_length=200)),
                 ('crm', models.CharField(max_length=200)),
             ],
-            bases=('api_hospitalar.pessoa',),
+            bases=(PESSOA_MODEL,),
         ),
         migrations.CreateModel(
             name='Paciente',
             fields=[
-                ('pessoa_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='api_hospitalar.pessoa')),
+                ('pessoa_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to=PESSOA_MODEL)),
                 ('procedimento_medico', models.CharField(max_length=200)),
             ],
-            bases=('api_hospitalar.pessoa',),
+            bases=(PESSOA_MODEL,),
         ),
         migrations.CreateModel(
             name='Consulta',
@@ -46,8 +47,8 @@ class Migration(migrations.Migration):
                 ('data_consulta', models.DateTimeField(auto_now_add=True)),
                 ('diagnostico', models.CharField(max_length=400)),
                 ('prescricao', models.CharField(max_length=500)),
-                ('medico', models.ForeignKey(on_delete=django.db.models.deletion.DO_NOTHING, to='api_hospitalar.medico')),
-                ('paciente', models.ForeignKey(on_delete=django.db.models.deletion.DO_NOTHING, to='api_hospitalar.paciente')),
+                ('medico', models.ForeignKey(on_delete=django.db.models.deletion.DO_NOTHING, to=PESSOA_MODEL)),
+                ('paciente', models.ForeignKey(on_delete=django.db.models.deletion.DO_NOTHING, to=PESSOA_MODEL)),
             ],
         ),
     ]
