@@ -1,6 +1,6 @@
-from api_hospitalar.models import *
-from api_hospitalar.serializers import *
-from api_hospitalar.permissions import *
+from api_hospitalar.models import Medico, Paciente, Consulta
+from api_hospitalar.serializers import MedicoSerializer, PacienteSerializer, ConsultaSerializer
+from api_hospitalar.permissions import User_Permissions
 from rest_framework import viewsets
 from rest_framework.decorators import action
 from rest_framework.response import Response
