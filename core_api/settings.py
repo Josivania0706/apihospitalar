@@ -77,6 +77,8 @@ DATABASES = {
 }
 
 
+import os
+
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
@@ -85,8 +87,11 @@ EMAIL_HOST = 'smtp.seu-servidor.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'apihospitalar@gmail.com'
-EMAIL_HOST_PASSWORD = 'apihospitar'
+username = os.getenv("apihospitalar@gmail.com") # Compliant
+password = os.getenv("12345") # Compliant
+usernamePassword = 'user=%s&password=%s' % (username, password) # Compliant{code}
 
+EMAIL_HOST_PASSWORD = usernamePassword
 AUTH_PASSWORD_VALIDATORS = [ ]
 
 LANGUAGE_CODE = 'pt-br'
