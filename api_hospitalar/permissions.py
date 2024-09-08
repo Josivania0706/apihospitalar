@@ -1,6 +1,6 @@
 from rest_framework.permissions import BasePermission
 
-class User_Permissions(BasePermission):
+class UserPermissions(BasePermission):
     def has_permission(self, request, view):
         if request.user.groups.filter(name='Atendentes').exists():
             return request.method in ['GET', 'POST', 'PUT', 'DELETE']  # Permissão completa para Atendentes (RF001)

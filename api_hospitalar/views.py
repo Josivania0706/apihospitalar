@@ -8,7 +8,7 @@ from datetime import datetime
 from rest_framework.decorators import action
 
 
-class Medicos_API(viewsets.ModelViewSet):
+class MedicosAPI(viewsets.ModelViewSet):
     """ API para gerenciamento de médicos."""
 
     queryset = Medico.objects.all()
@@ -23,7 +23,7 @@ class Medicos_API(viewsets.ModelViewSet):
         return Response({'status': 'medico arquivado'})
 
 
-class Pacientes_API(viewsets.ModelViewSet):
+class PacientesAPI(viewsets.ModelViewSet):
     """ API para gerenciamento de pacientes."""
 
     queryset = Paciente.objects.all()
@@ -53,7 +53,7 @@ class Pacientes_API(viewsets.ModelViewSet):
         return Response(serializer.data)
 
 
-class Consultas_API(viewsets.ModelViewSet):
+class ConsultasAPI(viewsets.ModelViewSet):
     """ API para gerenciamento de consultas."""
 
     queryset = Consulta.objects.all()
