@@ -85,7 +85,7 @@ EMAIL_HOST = 'smtp.seu-servidor.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'seu-email@exemplo.com'
-EMAIL_HOST_PASSWORD = 'sua-senha'
+EMAIL_HOST_PASSWORD = get_random_secret_key()
 
 AUTH_PASSWORD_VALIDATORS = [ ]
 
