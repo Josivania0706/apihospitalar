@@ -42,9 +42,9 @@ class Medico(Pessoa):
             envio_notificacao = self.data_consulta - timedelta(days=1)
             send_mail(
                 'Lembrete de Consulta',
-                f'Você tem uma consulta agendada com {self.medico.nome} no dia {self.data_consulta}.',
-                'seu-email@exemplo.com',
+                f'Você tem uma consulta agendada com {self.medico.nome} no dia {self.data_consulta}.', {self.paciente.email},
                 [self.paciente.email],
+                eta=envio_notificacao,
                 fail_silently=False,
             )
     

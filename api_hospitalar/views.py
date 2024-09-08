@@ -3,7 +3,7 @@ from rest_framework.decorators import action
 from rest_framework.response import Response
 from api_hospitalar.models import Medico, Paciente, Consulta
 from api_hospitalar.serializers import MedicoSerializer, PacienteSerializer, ConsultaSerializer
-from api_hospitalar.permissions import User_Permissions
+from api_hospitalar.permissions import UserPermissions
 from datetime import datetime
 from rest_framework.decorators import action
 
@@ -13,7 +13,7 @@ class MedicosAPI(viewsets.ModelViewSet):
 
     queryset = Medico.objects.all()
     serializer_class = MedicoSerializer
-    permission_classes = [User_Permissions]
+    permission_classes = [UserPermissions]
 
     @action(detail=True, methods=['patch'], url_path='arquivar')
     def arquivar(self, request, pk=None):
@@ -28,7 +28,7 @@ class PacientesAPI(viewsets.ModelViewSet):
 
     queryset = Paciente.objects.all()
     serializer_class = PacienteSerializer
-    permission_classes = [User_Permissions]
+    permission_classes = [UserPermissions]
 
     @action(detail=True, methods=['patch'], url_path='arquivar')
     def arquivar(self, request, pk=None):
@@ -58,7 +58,7 @@ class ConsultasAPI(viewsets.ModelViewSet):
 
     queryset = Consulta.objects.all()
     serializer_class = ConsultaSerializer
-    permission_classes = [User_Permissions]
+    permission_classes = [UserPermissions]
 
     @action(detail=True, methods=['patch'], url_path='arquivar')
     def arquivar(self, request, pk=None):
