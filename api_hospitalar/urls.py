@@ -1,5 +1,4 @@
 
-
 from rest_framework.routers import SimpleRouter
 from api_hospitalar.views import *
 
