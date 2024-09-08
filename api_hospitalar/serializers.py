@@ -1,4 +1,4 @@
-from api_hospitalar.models import *
+from api_hospitalar.models import Medico, Paciente, Consulta
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
 

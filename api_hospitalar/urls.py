@@ -1,9 +1,9 @@
 
 from rest_framework.routers import SimpleRouter
-from api_hospitalar.views import *
+from api_hospitalar.views import MedicosAPI, PacientesAPI, ConsultasAPI
 
 # gerador de rotas do Rest
 router = SimpleRouter()
-router.register('medicos', Medicos_API)
-router.register('pacientes', Pacientes_API)
-router.register('consultas', Consultas_API)
+router.register('medicos', MedicosAPI)
+router.register('pacientes', PacientesAPI)
+router.register('consultas', ConsultasAPI)
