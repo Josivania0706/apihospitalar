@@ -18,3 +18,4 @@ class ConsultaAdmin(admin.ModelAdmin):
 admin.site.register(Medico, MedicoAdmin)
 admin.site.register(Paciente, PacienteAdmin)
 admin.site.register(Consulta, ConsultaAdmin)
+

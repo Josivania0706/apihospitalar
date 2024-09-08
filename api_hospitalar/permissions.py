@@ -1,14 +1,31 @@
-from  rest_framework.permissions import BasePermission
+# from  rest_framework.permissions import BasePermission
+
+# class User_Permissions(BasePermission):
+#     def has_permission(self, request, view):
+#         if request.user.groups.filter(name='Atendentes').exists():
+#             return request.method in ['GET', 'POST', 'PUT']
+        
+#         elif request.user.groups.filter(name='Medicos').exists():
+#             return request.method in ['GET', 'POST', 'PUT', 'DELETE']
+        
+#         elif request.user.groups.filter(name='Leitores').exists():
+#             return request.method in ['GET']
+        
+#         return False
+
+from rest_framework.permissions import BasePermission
 
 class User_Permissions(BasePermission):
     def has_permission(self, request, view):
         if request.user.groups.filter(name='Atendentes').exists():
-            return request.method in ['GET', 'POST', 'PUT']
+            return request.method in ['GET', 'POST', 'PUT', 'DELETE']  # Permissão completa para Atendentes (RF001)
         
         elif request.user.groups.filter(name='Medicos').exists():
-            return request.method in ['GET', 'POST', 'PUT', 'DELETE']
-        
+            return request.method in ['GET', 'PUT']  # Médicos podem visualizar (RF009)
+
         elif request.user.groups.filter(name='Leitores').exists():
-            return request.method in ['GET']
+            if request.method == 'POST' and view.basename == 'consultas':  # Leitor pode agendar consultas (RF025)
+                return True
+            return request.method in ['GET']  # Leitores só podem visualizar
         
         return False

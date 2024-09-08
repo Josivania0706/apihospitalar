@@ -1,5 +1,6 @@
 from api_hospitalar.models import *
 from rest_framework import serializers
+from django.contrib.auth import get_user_model
 
 'Os campos mostrados nas classes serializers são o que apareceram no Rest'
 
@@ -17,4 +18,3 @@ class ConsultaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Consulta
         fields = ['id', 'paciente', 'medico', 'diagnostico', 'prescricao', 'data_consulta']
-
