@@ -83,11 +83,11 @@ import os
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.seu-servidor.com'
+EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'apihospitalar@gmail.com'
-EMAIL_HOST_PASSWORD = os.getenv("12345")
+EMAIL_HOST_PASSWORD = "12345"
 AUTH_PASSWORD_VALIDATORS = [ ]
 
 LANGUAGE_CODE = 'pt-br'
